@@ -1,5 +1,5 @@
-import {PureComponent} from 'react';
-import { autorun,toJS } from 'mobx';
+import { PureComponent } from 'react';
+import { autorun, toJS } from 'mobx';
 
 export default class extends PureComponent {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class extends PureComponent {
     const {store} = this.props;
     this._disposer = autorun(() => {
       if (this.condition()) {
-        this.conditionChange(store,toJS);
+        this.onConditionChange(store,toJS);
       }
     });
   }
@@ -21,7 +21,7 @@ export default class extends PureComponent {
     return store;
   }
 
-  conditionChange(store,toJS){
+  conditionChange(){
     //to be impl
   }
 
