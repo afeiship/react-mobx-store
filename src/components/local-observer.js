@@ -11,7 +11,7 @@ export default class extends PureComponent {
     const {store} = this.props;
     this._disposer = autorun(() => {
       if (this.condition()) {
-        this.onConditionChange(store,toJS);
+        this.conditionChange(store,toJS);
       }
     });
   }
